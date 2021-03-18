@@ -1,1 +1,2 @@
-web: gunicorn \venv\app_v6:app --preload
+web: gunicorn app.wsgi 
+web: gunicorn app_v6:app --preload
