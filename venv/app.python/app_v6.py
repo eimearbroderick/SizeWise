@@ -13,6 +13,10 @@ app.secret_key = 'super secret key'
 #Flask DB Configuration
 #DB Connection code taken from https://www.codementor.io/@adityamalviya/python-flask-mysql-connection-rxblpje73 by Aditya Malviya
 
+#connecting to heroku
+DB_CONN= "mysql+pymysql://wxyyl46fbev0qqau:c27lzs5zwbfzj29x@lmc8ixkebgaq22lo.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/p72ii57nh03mrmhe"
+
+#local db
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'mypass'
