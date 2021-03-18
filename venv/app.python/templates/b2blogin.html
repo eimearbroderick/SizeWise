@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+
+    <title>Signin Template for Bootstrap - b2b Login</title>
+    <!--Template from getbootstrap.com-->
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href = "{{ url_for ('static', filename='signin.css') }}">
+
+  </head>
+   
+<body class="text-center">
+
+
+  <!-- bootstrap navbar from https://getbootstrap.com/docs/4.0/components/navbar/ -->
+  <nav class="navbar sticky-top navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1">SizeWise</span>
+        <button class="btn btn-dark" type="button"><a href="{{ url_for('login') }}"> Back </a></button>
+    </nav>
+    
+
+
+ <!--Business login code inspired by user login code, provided by @venniladeenan at https://www.geeksforgeeks.org/login-and-registration-project-using-flask-and-mysql/-->
+    <form class="form-signin" action ="{{ url_for('storelogin') }}" method="POST"> 
+        <div class="msg">{{ msg }}</div> 
+      <img class="mb-4" src="{{url_for('static', filename='sw.png')}}" alt="Sizewise logo" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Business Login</h1>
+    </br> 
+      <label for="inputEmail" class="sr-only">Store Name</label>
+      <input id="store" name="store" type="text" placeholder="Store Name" class="form-control" required autofocus>
+      
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input id="password" name="password" type="password" placeholder="Password" class="form-control" required>
+</br> 
+      <input type="submit" class="btn btn-lg btn-primary btn-block" value="Sign In">
+      
+      <p class="mt-5 mb-3 text-muted">&copy; SizeWise 2021</p>
+      <p class="mt-5 mb-3 text-muted">If your brand would like to partner with SizeWise, email business@sizewise.com to get started</p>
+    </form>
+  </body>
+</html>
