@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath app app_v6.app --preload
+web: gunicorn -b app_v6.app --preload

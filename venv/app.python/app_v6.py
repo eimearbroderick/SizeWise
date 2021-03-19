@@ -7,6 +7,7 @@ import pandas as pd
 
 
 app = Flask(__name__)
+
 #secret key assigns session cookies for protection against cookie data tampering
 app.secret_key = 'super secret key'
 
