@@ -1,1 +1,1 @@
-web gunicorn --chdir venv app app_v6:app
+web gunicorn --chdir app.python app_v6:app
