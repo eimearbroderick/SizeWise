@@ -1,1 +1,1 @@
-web: gunicorn app.venv.app_v6:app --preload
+web: gunicorn --pythonpath venv app_v6:app 
