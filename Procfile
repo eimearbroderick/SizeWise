@@ -1,1 +1,1 @@
-web: gunicorn 'venv.sw.app_v6:app' --preload
+web: gunicorn --bind 0.0.0.0:$PORT venv/sw.python/appv6:app
