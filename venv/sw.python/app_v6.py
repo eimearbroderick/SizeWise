@@ -31,6 +31,11 @@ mysql = MySQL(app)
 def home():
     return render_template("home.html")
 
+#calls Login page
+@app.route('/loginpage')
+def loginpage():
+    return render_template("login.html")
+
 #calls Weekday page
 @app.route('/weekday')
 def weekday():
