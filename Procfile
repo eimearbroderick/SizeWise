@@ -1,1 +1,1 @@
-web: gunicorn --bind 0.0.0.0:$PORT --pythonpath venv app_v6.app
+web: gunicorn --chdir venv/sw.python app_v6.app --log-file -
