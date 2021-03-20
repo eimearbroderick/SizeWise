@@ -403,13 +403,10 @@ def logout():
 
 
 #Python app starter code from https://www.codementor.io/@adityamalviya/python-flask-mysql-connection-rxblpje73 by Aditya Malviya
-    #if __name__ == '__main__':
+if __name__ == '__main__':
   
-app.config['SESSION_TYPE'] = 'filesystem'
+    app.config['SESSION_TYPE'] = 'filesystem'
 
     #app.debug = True 
     #prevents the registration of users
-
-
-
-app.run()
+    app.run()
