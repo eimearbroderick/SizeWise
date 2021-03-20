@@ -34,7 +34,7 @@ def home():
 #calls Login page
 @app.route('/loginpage')
 def loginpage():
-    return render_template("login.html")
+    return render_template("venv/sw.python/templates/login.html")
 
 #calls Weekday page
 @app.route('/weekday')
