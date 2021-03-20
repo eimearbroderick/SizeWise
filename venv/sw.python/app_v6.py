@@ -34,7 +34,7 @@ def home():
 #calls Weekday page
 @app.route('/weekday')
 def weekday():
-    return render_template("index.html")
+    return render_template("home.html")
 
 #calls Nike page
 @app.route('/nike')
@@ -168,7 +168,7 @@ def swscore():
     for i in rows: 
         avgrating = str(i[0])
         displayavg = pd.DataFrame.from_records(avgrating) 
-        return render_template('index.html',displayavg=displayavg, rows=rows, avgrating=avgrating)  
+        return render_template('home.html',displayavg=displayavg, rows=rows, avgrating=avgrating)  
 
 #saves a discount code to the database
 # code inspired by user registration code by @venniladeenan at https://www.geeksforgeeks.org/login-and-registration-project-using-flask-and-mysql/
