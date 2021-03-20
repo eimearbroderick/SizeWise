@@ -1,1 +1,1 @@
-web: gunicorn --bind 0.0.0.0:$PORT venv/sw.python/appv6:app
+web: gunicorn --bind 0.0.0.0:$PORT --pythonpath venv appv6.app
