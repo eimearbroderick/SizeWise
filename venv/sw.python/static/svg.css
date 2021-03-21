@@ -43,3 +43,20 @@ svg {
     font-size: 40px;
     transition: 0.5s;
   }
+
+  svg circle:nth-child(2) {
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+}
+  .card:nth-child(1) svg circle:nth-child(2) {
+      stroke-dashoffset: 5;
+      stroke: #00ff43 !important;
+  }
+  .card:nth-child(2) svg circle:nth-child(2) {
+      stroke-dashoffset: calc(440 - (440 * 70) /100);
+      stroke: #00a1ff !important;
+  }
+  .card:nth-child(3) svg circle:nth-child(2) {
+      stroke-dashoffset: calc(440 - (440 * 25) /100);
+      stroke: #ff04f7 !important;
+  }

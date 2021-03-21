@@ -17,16 +17,19 @@
 
   </head>
    
-<body class="text-center">
 
 
+<header>
   <!-- bootstrap navbar from https://getbootstrap.com/docs/4.0/components/navbar/ -->
   <nav class="navbar sticky-top navbar-dark bg-dark">
         <span class="navbar-brand mb-0 h1">SizeWise</span>
         <button class="btn btn-dark" type="button"><a href="{{ url_for('login') }}"> Back </a></button>
     </nav>
-    
-
+  </header>
+  
+  
+  
+  <body class="text-center">
 
  <!--Business login code inspired by user login code, provided by @venniladeenan at https://www.geeksforgeeks.org/login-and-registration-project-using-flask-and-mysql/-->
     <form class="form-signin" action ="{{ url_for('storelogin') }}" method="POST"> 

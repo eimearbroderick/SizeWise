@@ -14,9 +14,6 @@ app.secret_key = 'super secret key'
 #Flask DB Configuration
 #DB Connection code taken from https://www.codementor.io/@adityamalviya/python-flask-mysql-connection-rxblpje73 by Aditya Malviya
 
-#connecting to heroku
-DB_CONN= "mysql+pymysql://wxyyl46fbev0qqau:c27lzs5zwbfzj29x@lmc8ixkebgaq22lo.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/p72ii57nh03mrmhe"
-
 #local db
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
@@ -26,20 +23,24 @@ app.config['MYSQL_DB'] = 'login'
 #Creates an instance of the application to provide us with DB Access
 mysql = MySQL(app)
 
-#calls the homepage
-@app.route('/home')
-def home():
-    return render_template("home.html")
+#connecting to heroku
+DB_CONN= "mysql+pymysql://wxyyl46fbev0qqau:c27lzs5zwbfzj29x@lmc8ixkebgaq22lo.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/p72ii57nh03mrmhe"
+
 
 #calls Login page
 @app.route('/loginpage')
 def loginpage():
     return render_template("venv/sw.python/templates/login.html")
 
+#calls Home page
+@app.route('/home')
+def home():
+    return render_template("home.html")
+
 #calls Weekday page
 @app.route('/weekday')
 def weekday():
-    return render_template("home.html")
+    return render_template("weekday.html")
 
 #calls Nike page
 @app.route('/nike')
@@ -173,7 +174,7 @@ def swscore():
     for i in rows: 
         avgrating = str(i[0])
         displayavg = pd.DataFrame.from_records(avgrating) 
-        return render_template('home.html',displayavg=displayavg, rows=rows, avgrating=avgrating)  
+        return render_template('weekday.html',displayavg=displayavg, rows=rows, avgrating=avgrating)  
 
 #saves a discount code to the database
 # code inspired by user registration code by @venniladeenan at https://www.geeksforgeeks.org/login-and-registration-project-using-flask-and-mysql/
