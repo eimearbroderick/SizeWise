@@ -28,7 +28,7 @@
             <!-- User profile bootstap from https://www.bootdey.com/snippets/view/Seller-profile#css-->
             <div class="panel panel-default">
               <div class="panel-heading">
-              <h4 class="panel-title">My Account</h4>
+              <h2 class="panel-title">My Account</h2>
               </div>
               <div class="panel-body">
                 <div class="profile__avatar">
@@ -98,16 +98,16 @@
                 <table class="table profile__table">
                   <tbody>
                     <tr>
-                      <th><strong>Comments</strong></th>
-                      <td>58</td>
+                      <th><strong>Reviews</strong></th>
+                      <td>10</td>
                     </tr>
                     <tr>
                       <th><strong>Member since</strong></th>
-                      <td>Jan 01, 2016</td>
+                      <td>Jan 01, 2021</td>
                     </tr>
                     <tr>
                       <th><strong>Top Brand</strong></th>
-                      <td>Nike</td>
+                      <td>Weekday</td>
                     </tr>
                   </tbody>
                 </table>
@@ -171,106 +171,7 @@
           </div> 
         </div>
            
-           <!---
-           
-              <table> 
-              <tr>
-                <th>Store</th>
-                <th>Size</th>
-                <th>Review</th>
-              </tr>
-                {% if review|length > 0 %}
-                <!--i is the index, rev contains the row
-                      {% for i, rev in review.iterrows()  %}
-                      <tr>
-
-                      <td>{{rev["store"]}}</td>
-                      <td>{{rev["size"]}}</td>
-                      <td>{{rev["review"]}}</td>
-                    </tr>  
-
-                      {% endfor %}
-                {% endif %}
-
-            </table> 
-          </div> -->
-    
-            <!-- Latest posts 
-            <div class="panel panel-default">
-              <div class="panel-heading">
-              <h4 class="panel-title">Latest Reviews</h4>
-              </div>
-              <div class="panel-body">
-                <div class="profile__comments">
-                  <div class="profile-comments__item">
-                    <div class="profile-comments__controls">
-                      <a href="#"><i class="fa fa-share-square-o"></i></a>
-                      <a href="#"><i class="fa fa-edit"></i></a>
-                      <a href="#"><i class="fa fa-trash-o"></i></a>
-                    </div>
-                    <div class="profile-comments__avatar">
-                      <img src="https://img.favpng.com/2/12/12/computer-icons-portable-network-graphics-user-profile-avatar-png-favpng-L1ihcbxsHbnBKBvjjfBMFGbb7.jpg" alt="...">
-                    </div>
-                    <div class="profile-comments__body">
-                      <h5 class="profile-comments__sender">
-                        {{account['username']}} <small>2 hours ago</small>
-                      </h5>
-                      <div class="profile-comments__content">
-                        Purchased a pair of jeans in a size 32 leg and they were too short! If you are of similar height I would recommend going longer from this brand. 
-                      </div>
-                    </div>
-                  </div>
-                  <div class="profile-comments__item">
-                    <div class="profile-comments__controls">
-                      <a href="#"><i class="fa fa-share-square-o"></i></a>
-                      <a href="#"><i class="fa fa-edit"></i></a>
-                      <a href="#"><i class="fa fa-trash-o"></i></a>
-                    </div>
-                    <div class="profile-comments__avatar">
-                      <img src="https://img.favpng.com/2/12/12/computer-icons-portable-network-graphics-user-profile-avatar-png-favpng-L1ihcbxsHbnBKBvjjfBMFGbb7.jpg" alt="..." >
-                    </div>
-                    <div class="profile-comments__body">
-                      <h5 class="profile-comments__sender">
-                        {{account['username']}} <small>5 hours ago</small>
-                      </h5>
-                      <div class="profile-comments__content">
-                        {% for row in showreviews %} 
-                        
-                        {{showreviews}}
-                            
-                    {% endfor %}
-                      </div>
-                    </div>
-                  </div>
-                  <div class="profile-comments__item">
-                    <div class="profile-comments__controls">
-                      <a href="#"><i class="fa fa-share-square-o"></i></a>
-                      <a href="#"><i class="fa fa-edit"></i></a>
-                      <a href="#"><i class="fa fa-trash-o"></i></a>
-                    </div>
-                    <div class="profile-comments__avatar">
-                      <img src="https://img.favpng.com/2/12/12/computer-icons-portable-network-graphics-user-profile-avatar-png-favpng-L1ihcbxsHbnBKBvjjfBMFGbb7.jpg" alt="...">
-                    </div>
-                    <div class="profile-comments__body">
-                      <h5 class="profile-comments__sender">
-                        {{account['username']}} <small>3 days ago</small>
-                      </h5>
-                      <div class="profile-comments__content">
-                        {% for row in showreviews %} 
-                        
-                            {{row[1]}}
-                            
-                    {% endfor %}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-    
-          </div>
-
-        -->
+         
           
       </br> 
         <div class="col-xs-12 col-sm-3">
@@ -313,15 +214,6 @@
                   <a href="mailto:admin@domain.com"> {{account['email']}}</a>
                 </div>
               </div>
-            <!--    <div class="profile__contact-info-item">
-                <div class="profile__contact-info-icon">
-                  <i class="fa fa-map-marker"></i>
-                </div>
-              <div class="profile__contact-info-body">
-                  <h5 class="profile__contact-info-heading">Work address</h5>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                </div>
-              </div> -->
             </div>
     
           </div>

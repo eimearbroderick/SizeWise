@@ -14,6 +14,7 @@ app.secret_key = 'super secret key'
 #Flask DB Configuration
 #DB Connection code taken from https://www.codementor.io/@adityamalviya/python-flask-mysql-connection-rxblpje73 by Aditya Malviya
 #heroku connection via cleardb taken from cleardb database url
+#cleardb logic from https://roytuts.com/how-to-deploy-python-flask-mysql-based-application-in-heroku-cloud/
 app.config['MYSQL_HOST'] = 'eu-cdbr-west-03.cleardb.net'
 app.config['MYSQL_USER'] = 'be3d7f07548bfa'
 app.config['MYSQL_PASSWORD'] = '005c2afb'
@@ -284,7 +285,7 @@ def edit():
     msg= ''
     if 'loggedin' in session: 
         if request.method == 'POST' and 'username' in request.form and 'email' in request.form and 'first_name' in request.form and 'last_name' in request.form and 'age' in request.form and 'height' in request.form and 'weight' in request.form and 'avgsize' in request.form: 
-            username = request.form['username'] 
+            username = (session['username'])
             email = request.form['email'] 
             first_name = request.form['first_name']   
             last_name = request.form['last_name'] 
@@ -296,14 +297,12 @@ def edit():
             cursor.execute('SELECT * FROM accounts WHERE username = % s', (username, )) 
             account = cursor.fetchone() 
             #Form controls 
-            if account: 
-                msg = 'Account already exists !'
-            elif not re.match(r'[^@]+@[^@]+\.[^@]+', email): 
+            if  not re.match(r'[^@]+@[^@]+\.[^@]+', email): 
                 msg = 'Invalid email address !'
             elif not re.match(r'[A-Za-z0-9]+', username): 
                 msg = 'name must contain only characters and numbers !'
             else: 
-                cursor.execute('UPDATE accounts SET  username =% s, email =% s, first_name =% s, last_name =% s, age =% s, height =% s, weight =% s, avgsize =% s WHERE id =% s', (username, email, first_name, last_name, age, height, weight, avgsize, (session['id'], ), )) 
+                cursor.execute('UPDATE accounts SET username =% s, email =% s, first_name =% s, last_name =% s, age =% s, height =% s, weight =% s, avgsize =% s WHERE id =% s', (username, email, first_name, last_name, age, height, weight, avgsize, (session['id'], ), )) 
                 #coommits database changes to MySQL
                 mysql.connection.commit() 
                 msg = 'You have successfully updated your account details!'
