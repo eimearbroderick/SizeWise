@@ -18,6 +18,11 @@
   text-align: center !important;
 }
 
+#h3 {
+  text-align: center !important;
+}
+
+
 </style>
 <link rel="stylesheet" href = "{{ url_for ('static', filename='index.css') }}">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -25,6 +30,9 @@
 
 <link href='https://fonts.googleapis.com/css?family=Josefin+Slab'>
 <link rel='stylesheet' href = "{{ url_for ('static', filename='index.css') }}">
+
+
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
 <link rel='stylesheet' id='bootstrap-css'  href='http://gentsthemes.com/demo/instantwp/wp-content/themes/instantwp/css/bootstrap.min.css?ver=3.2.0' type='text/css' media='all' />
 
@@ -49,20 +57,13 @@
 <link rel="alternate" type="text/xml+oembed" href="http://gentsthemes.com/demo/instantwp/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fgentsthemes.com%2Fdemo%2Finstantwp%2F&#038;format=xml" />
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script type="text/javascript">
-    // <![CDATA[
+  
     jQuery(document).ready(function($){
         $("a[rel='magnific']").magnificPopup({
                 type:'image'
         });
     });  
-    // ]]>
     </script>
-
-<style type="text/css">
- 
-</style> 
-
-
 
 </head>
 
@@ -79,9 +80,7 @@
                             <button class="btn btn-dark" type="button"><a href="{{ url_for('profile') }}"> My Account</a></button>
                           </form>
                     </nav> 
-           
- 
-    </header><!-- end of header -->
+    </header>
         
 	
         <div id="wrapper" class="clearfix">
@@ -100,24 +99,60 @@
 <h4>To our Online Shopping Community</h4>
 			</div>
 		
-	</div><!-- /row -->
-</div> <!-- /container -->
-</div><!-- /headerwrap -->
+	</div>
+</div> 
+</div>
 
-
-
-       
-    
-<!-- *****************************************************************************************************************
-PORTFOLIO SECTION
-***************************************************************************************************************** -->
-
+<!--Brand Menu-->
 <section id="works"></section>
 <div class="container">
   
   <div class="menu_brands">
 
   </br>
+
+<div class="container">
+  <div id="carouselContent" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner" role="listbox">
+          <div class="carousel-item active text-center p-4">
+            <h3>
+              <span class="icon-stack">
+                <i class="icon-eye-open"></i>
+              </span>
+              Read reviews from real shoppers
+              </h3>
+          </div>
+          <div class="carousel-item text-center p-4">
+           <h3>
+            <span class="icon-stack">
+              <i class="icon-edit"></i>
+            </span>
+            Share your experiences to unlock discount codes<br>
+          </h3>
+          </div>
+          <div class="carousel-item text-center p-4">
+            <h3>
+             <span class="icon-stack">
+              <i class="icon-dashboard"></i>
+            </span>
+            Use our review analysis to make better online shopping decisions<br>
+           </h3>
+           </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselContent" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselContent" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+      </a>
+  </div>
+</div>
+
+</br>
+</br>
+
                 <h1>Sizing Help for Top Online Retailers</h1>
  
 </br> 
@@ -133,7 +168,7 @@ PORTFOLIO SECTION
 
 
         <div class="col-lg-4 col-md-4 col-sm-4 gallery">
-         <a href="{{ url_for('nike') }}">
+         <a href="#">
 
                                   
                      <img class='img-responsive' src='https://www.festisite.com/static/partylogo/img/logos/nike.png'  width='300' height='160' alt='nike' />                 
@@ -143,46 +178,15 @@ PORTFOLIO SECTION
 
 
         <div class="col-lg-4 col-md-4 col-sm-4 gallery">
-         <a href="{{ url_for('zara') }}">
+         <a href="#">
 
                                   
                      <img class='img-responsive' src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Zara_Logo.svg/1024px-Zara_Logo.svg.png'  width='300' height='160' alt='zara' />                 
               
          </a>
   </div>
-
-
-
-<!--
-        <div class="col-lg-4 col-md-4 col-sm-4 gallery">
-         <a href="http://gentsthemes.com/demo/instantwp/portfolio/project-name-2/">
-
-                                  
-                     <img class='img-responsive' src='http://gentsthemes.com/demo/instantwp/wp-content/uploads/sites/7/2014/07/folio05.png' alt='' />                 
-              
-         </a>
-  </div> -->
-
-
-      <!-- <div class="col-lg-4 col-md-4 col-sm-4 gallery">
-         <a href="http://gentsthemes.com/demo/instantwp/portfolio/project-name/">
-
-                                  
-                     <img class='img-responsive' src='http://gentsthemes.com/demo/instantwp/wp-content/uploads/sites/7/2014/07/folio06.png' alt='' />                 
-              
-         </a>
-  </div>
--->
-
 </div> 
-
-    
-
-
 </div><!-- end of wrapper-->
-
-
-
 
 
 <footer id="footerwrap">
@@ -202,16 +206,18 @@ PORTFOLIO SECTION
 
         <div class="col-lg-4">
              <div id="text-4" class="widget_text">			<div class="textwidget"><p>hello@sizewise.com</p></div>
-		</div>        </div><!-- end .col-lg-4-->
+		</div>        </div>
 
-    </div><!-- end row -->
-  </div> <!-- end container --> 
-</footer><!-- end #footer -->
+    </div>
+  </div> 
+</footer>
 
 <script type='text/javascript' src='http://gentsthemes.com/demo/instantwp/wp-content/themes/instantwp/js/responsive-scripts.js?ver=1.1.0'></script>
 <script type='text/javascript' src='http://gentsthemes.com/demo/instantwp/wp-content/themes/instantwp/js/responsive-plugins.js?ver=1.1.0'></script>
 <script type='text/javascript' src='http://gentsthemes.com/demo/instantwp/wp-includes/js/comment-reply.min.js?ver=4.7.5'></script>
 <script type='text/javascript' src='http://gentsthemes.com/demo/instantwp/wp-includes/js/wp-embed.min.js?ver=4.7.5'></script>
-
+<script type='text/javascript' src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script type='text/javascript' src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script type='text/javascript' src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -19,12 +19,13 @@
                  <button class="btn btn-dark" type="button"><a href="{{ url_for('profile') }}"> My Account</a></button>
                </form>
          </nav> 
-       
-        </br>
-           </br>
-        </br>
-    </br>
-               <div align="center"> 
+        <!--Nike Dashboard functionality was not updated past v3-->
+          </br>
+          </br>
+          </br>
+          </br>
+               
+          <div align="center"> 
                  <div align="center" > 
                     <div class="header"> 
                      <img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Old_Nike_logo.jpg" alt="Nike Logo"> 
@@ -36,36 +37,12 @@
                        <img src="{{url_for('static', filename='NikeGauge.png')}}" align="middle" />
                      </br> 
                        
-                    <!---Unused button <a href="{{ url_for('logout') }}" class="btn">Logout</a> -->
                  </div> 
                </div> 
              </br>
-           
  
-               <!--Gauge code - Unused for now
-               <div class="gauge">
-                 <ul class="meter">
-                     <li class="low"></li>
-                     <li class="normal"></li>
-                     <li class="high"></li>
-                 </ul>
-     
-                 <div class="dial">
-                         <div class="inner">
-                             <div class="arrow">
-                             </div>
-                         </div>			
-                 </div>
-     
-                 <div class="value">
-                     70%
-                 </div>
-     
-             </div> --> 
- 
- 
-               <!--review section with bootstrap from bootdey.com at https://www.bootdey.com/snippets/view/bs4-Ratings-and-Reviews-page#html-->
-               <h1>Nike Reviews</h1>
+ <!--review section with bootstrap from bootdey.com at https://www.bootdey.com/snippets/view/bs4-Ratings-and-Reviews-page#html-->
+<h1>Nike Reviews</h1>
          </br> 
  <div class="container">
    <div class="row">
@@ -146,36 +123,12 @@
  </br>
  </br>
  </br>
- <!--Rating section-->
- 
-   <!--<div class="mb-4">
-       <span class="star-rating">
-                <a href="#" value=1><i class="icofont-ui-rating icofont-2x"></i></a>
-                <a href="#" value=2><i class="icofont-ui-rating icofont-2x"></i></a>
-                <a href="#" value=3><i class="icofont-ui-rating icofont-2x"></i></a>
-                <a href="#" value=4><i class="icofont-ui-rating icofont-2x"></i></a>
-                <a href="#" value=5><i class="icofont-ui-rating icofont-2x"></i></a>
-                </span>
-   </div> -->
+
 
    <!--Rating section from https://www.bootdey.com/snippets/view/bs4-Ratings-and-Reviews-page#html-->
    <form action= "{{ url_for('review') }}" method = "POST" autocomplete="off">
      <div class="msg">
       
-      <!--<h1>Thanks for your SizeWise review! A present for you from Nike</h1>
-      <div class="box">
-        <a class="button" href="#popup1">Reveal my Discount Code</a>
-      </div>
-      
-      <div id="popup1" class="overlay">
-        <div class="popup">
-          <h2>NIKESW20</h2>
-          <a class="close" href="#">&times;</a>
-          <div class="content">
-            Nike appreciate your opinions. Use this discount code for 20% off your next order with them!
-          </div>
-        </div>
-      </div> -->
     
     </div> 
      <div class="bg-white rounded shadow-sm p-4 mb-5 rating-review-select-page">

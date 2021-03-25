@@ -1,4 +1,4 @@
-
+//Inspired by Add Review code from index.js
 
 function addDiscount_display(){
     el = document.querySelector('.content_section');

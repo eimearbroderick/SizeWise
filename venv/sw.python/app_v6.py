@@ -20,7 +20,7 @@ app.config['MYSQL_USER'] = 'be3d7f07548bfa'
 app.config['MYSQL_PASSWORD'] = '005c2afb'
 app.config['MYSQL_DB'] = 'heroku_b3e41d7b38c08f1'
 
-#local db
+#local db connection 
 #app.config['MYSQL_HOST'] = 'localhost'
 #app.config['MYSQL_USER'] = 'root'
 #app.config['MYSQL_PASSWORD'] = 'mypass'
@@ -101,33 +101,16 @@ def review():
 def fitcol():
      #activites mysql cursor    
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        
-        #code extract taken from https://realpython.com/python-mysql/ by Chaitanya Baweja 
-       # insert_fit_query = """
-        #SET SQL_MODE = '';
-        
-        #INSERT INTO reviews(category)
-        #VALUES
-        #(SELECT
-        #CASE 
-        #WHEN fit >= 4 
-         #    then 'Big'
-        #WHEN fit <= 2 
-         #    then 'Small' 
-        #ELSE 'Regular'     
-        #END as category)
-        #"""
+
         insert_fit_query = """
-            UPDATE reviews SET category =
-             CASE
-                    WHEN ( fit = 1 ) THEN 'Small'
-                    WHEN ( fit = 2 ) THEN 'Small'
-                    WHEN ( fit = 3 ) THEN 'Regular'
-                    WHEN ( fit = 4 ) THEN 'Big'
-                    WHEN ( fit = 5 ) THEN 'Big'
-                    else 'NULL'
-                    END 
-                    WHERE fit in (1,2,3,4,5)
+             SELECT FIT,
+             (CASE
+             WHEN (FIT >=4) THEN 'BIG'
+             WHEN (FIT <=2) THEN 'SMALL'
+             WHEN (FIT=3) THEN 'REGULAR'
+             END) 
+             AS CATEGORY FROM REVIEWS;
+
         """
         cursor.execute(insert_fit_query)
         mysql.connection.commit() 
@@ -163,16 +146,13 @@ def userreviews():
 
 #calculates the sizewise average score
 #code extract from @saksham_kapoor at https://www.geeksforgeeks.org/how-to-compute-the-average-of-a-column-of-a-mysql-table-using-python/
-
 @app.route('/swscore' , methods =['GET', 'POST'])
 def swscore():  
     #activites mysql cursor    
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)      
     #executing the query 
-    avgrating= "Select (AVG(rating),0) AS avgrating from reviews;"
+    avgrating= "SELECT ROUND(AVG(rating),1) AS avgrating FROM reviews WHERE STORE='WEEKDAY';"
     cursor.execute(avgrating) 
-   # avgrating = cursor.fetchall()
-    #avgrating = pd.DataFrame.from_records(avgrating) 
     rows = cursor.fetchall() 
     for i in rows: 
         avgrating = str(i[0])
@@ -180,7 +160,7 @@ def swscore():
         return render_template('weekday.html',displayavg=displayavg, rows=rows, avgrating=avgrating)  
 
 #saves a discount code to the database
-# code inspired by user registration code by @venniladeenan at https://www.geeksforgeeks.org/login-and-registration-project-using-flask-and-mysql/
+#code inspired by user registration code by @venniladeenan at https://www.geeksforgeeks.org/login-and-registration-project-using-flask-and-mysql/
 @app.route('/add_dcode' , methods =['GET', 'POST']) 
 def add_dcode():
     msg= '' 
@@ -279,7 +259,6 @@ def register():
 
 #edit an account profile
 #code from @venniladeenan at https://www.geeksforgeeks.org/profile-application-using-python-flask-and-mysql/
-
 @app.route('/edit', methods =['GET', 'POST']) 
 def edit():
     msg= ''
@@ -303,7 +282,7 @@ def edit():
                 msg = 'name must contain only characters and numbers !'
             else: 
                 cursor.execute('UPDATE accounts SET username =% s, email =% s, first_name =% s, last_name =% s, age =% s, height =% s, weight =% s, avgsize =% s WHERE id =% s', (username, email, first_name, last_name, age, height, weight, avgsize, (session['id'], ), )) 
-                #coommits database changes to MySQL
+                #commits database changes to MySQL
                 mysql.connection.commit() 
                 msg = 'You have successfully updated your account details!'
         elif request.method == 'POST': 

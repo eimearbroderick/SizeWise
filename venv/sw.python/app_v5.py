@@ -117,7 +117,7 @@ def swscore():
     #activites mysql cursor    
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)      
     #executing the query 
-    avgrating= "Select (AVG(rating),0) AS avgrating from reviews;"
+    avgrating= "SELECT ROUND(AVG(rating),1) AS avgrating FROM reviews WHERE STORE='WEEKDAY';"
     cursor.execute(avgrating) 
    # avgrating = cursor.fetchall()
     #avgrating = pd.DataFrame.from_records(avgrating) 

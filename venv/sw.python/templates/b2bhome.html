@@ -97,6 +97,8 @@ h2 {
     </div>
 
 </br> 
+
+ <!--Code help from Andrea Visentin-->
 <form action= "{{ url_for('reviewb2b') }}" method = "GET">
 <div class="divreviews"> 
     <div class="container bootstrap snippets bootdey">
@@ -148,65 +150,17 @@ h2 {
         </div>
     </div>
 </div> 
-        <!--Code snippet from Andrea Visentin-->
-        
-         <!--   <table> 
-                <tr>
-                  <th>Review ID</th>
-                  <th>Size</th>
-                  <th>Rating</th>
-                  <th>Review</th>
-                </tr>
-                  {% if review|length > 0 %}
-                  <!--i is the index, rev contains the row
-                        {% for i, rev in review.iterrows()  %}
-                        <tr>
-                        <td>{{rev["reviewID"]}}</td>
-                        <td>{{rev["size"]}}</td>
-                        <td>{{rev["rating"]}}</td>
-                        <td>{{rev["review"]}}</td>
-                      </tr>  
-  
-                        {% endfor %}
-                  {% endif %}
-  
-              </table>  
-    </div> -->
+      
 </form>
 
 </br> 
+
 <!--Table bootstrap from https://www.bootdey.com/snippets/view/table-user-list#preview-->
 <form action= "{{ url_for('showcodes') }}" method = "GET">
 <h2> SizeWise Discount Codes</h2>
-<!--
-<div class="divshowcodes"> 
-    <!--Code inspired by user @jeremy at https://stackoverflow.com/questions/60013712/flask-print-to-html-not-console
-  <table> 
-    <tr>
-      <th>Discount Code</th>
-      <th>Created</th>
-      <th>Status</th>
-      <th>Amount</th>
-    </tr>
-      {% if discounts|length > 0 %}
-      <!--i is the index, rev contains the row
-            {% for i, disc in discounts.iterrows()  %}
-            <tr>
 
-            <td>{{disc["dcode"]}}</td>
-            <td>{{disc["date"]}}</td>
-            <td>{{disc["active"]}}</td>
-            <td>{{disc["amount"]}}</td>
-          </tr>  
-
-            {% endfor %}
-      {% endif %}
-
-  </table> 
-</div> 
--->
-
-
+<!--Code inspired by user @jeremy at https://stackoverflow.com/questions/60013712/flask-print-to-html-not-console-->
+<!--Altered later to be added to tables with the help of Andrea Visentin-->
 
 
 <div class="container bootstrap snippets bootdey">
@@ -227,8 +181,7 @@ h2 {
                                 {% if discounts|length > 0 %}
                   <!--i is the index, rev contains the row -->
                         {% for i, disc in discounts.iterrows()  %}
-                           <!-- </thead> --> 
-                           <!-- <tbody> -->
+                          
                                 <tr>
                                     <td>
                                         {{disc["dcode"]}}
@@ -241,26 +194,7 @@ h2 {
                                     <td>
                                         {{disc["amount"]}}
                                     </td>
-                                  <!--  <td style="width: 20%;">
-                                        <a href="#" class="table-link text-warning">
-                                            <span class="fa-stack">
-                                                <i class="fa fa-square fa-stack-2x"></i>
-                                                <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
-                                            </span>
-                                        </a>  
-                                        <a href="#" class="table-link text-info">
-                                            <span class="fa-stack">
-                                                <i class="fa fa-square fa-stack-2x"></i>
-                                                <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
-                                            </span>
-                                        </a> 
-                                        <a href="#" class="table-link danger">
-                                            <span class="fa-stack">
-                                                <i class="fa fa-square fa-stack-2x"></i>
-                                                <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-                                            </span>
-                                        </a>
-                                    </td> -->
+                        
                                 </tr>
                               
                                 </tr> 
