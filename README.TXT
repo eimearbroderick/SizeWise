@@ -6,3 +6,5 @@ This project is hosted at the URL: https://sizewisefinal.herokuapp.com/
 Github code is available at: https://github.com/eimearbroderick/sizewise
 
 The final project runs from app_v6.py within sw.python.
+
+To login to the business dashboard, use the username 'Weekday' with the password 'week123'.
